@@ -7,6 +7,14 @@ defineProps({
     type: String,
     required: true,
   },
+  title: {
+    type: String,
+    required: true,
+  },
+  summary: {
+    type: String,
+    required: true,
+  },
 })
 
 const heroRoot = ref(null)
@@ -30,12 +38,18 @@ onMounted(() => {
     <div class="hero-backdrop"></div>
     <div class="fog-layer fog-layer-one"></div>
     <div class="fog-layer fog-layer-two"></div>
+    <div class="skeletal-hand" aria-hidden="true">
+      <span class="bone palm"></span>
+      <span class="bone finger finger-one"></span>
+      <span class="bone finger finger-two"></span>
+      <span class="bone finger finger-three"></span>
+      <span class="bone finger finger-four"></span>
+    </div>
     <div class="container hero-content">
-      <p class="hero-kicker">Bosque maldito. Niebla azul. Frontend de alto impacto.</p>
+      <p class="hero-kicker">Bosque maldito. Niebla azul. Presencia infernal.</p>
       <h1 class="hero-title">{{ name }}</h1>
-      <p class="hero-copy">
-        Portafolio experimental en Vue 3 con una presencia oscura, escalable y lista para convertir curiosidad en entrevistas.
-      </p>
+      <p class="hero-subtitle">{{ title }}</p>
+      <p class="hero-copy">{{ summary }}</p>
       <div class="hero-actions">
         <a class="button-primary" href="#projects">ENTRA SI TE ATREVES</a>
         <a class="button-secondary" href="#contact">Invocar contacto</a>

@@ -10,7 +10,7 @@ defineProps({
 <template>
   <header class="site-header">
     <nav class="navbar container">
-      <a class="brand" href="#hero">NECROMANCER.dev</a>
+      <a class="brand" href="#hero">FULL-STACK DEMON</a>
       <div class="nav-links">
         <a
           v-for="item in items"

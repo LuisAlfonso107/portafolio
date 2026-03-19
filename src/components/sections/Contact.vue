@@ -12,17 +12,17 @@ defineProps({
     <div class="container contact-grid">
       <div class="contact-copy">
         <p class="eyebrow">Ultimo ritual</p>
-        <h2>Conversemos</h2>
+        <h2>Invocame... si te atreves</h2>
         <p>
-          Si necesitas una interfaz con identidad, rendimiento y criterio tecnico, este es el punto de entrada.
+          Si buscas un portfolio con identidad, rendimiento y criterio tecnico, aqui termina la niebla y empieza la conversacion.
         </p>
         <div class="social-links">
           <a v-for="link in socialLinks" :key="link.label" :href="link.href" target="_blank" rel="noreferrer">
-            {{ link.label }}
+            {{ link.label }}<span v-if="link.text">: {{ link.text }}</span>
           </a>
         </div>
       </div>
-      <form class="contact-form">
+      <form class="contact-form" @submit.prevent>
         <label>
           Nombre
           <input type="text" name="name" placeholder="Tu nombre" />
@@ -33,7 +33,7 @@ defineProps({
         </label>
         <label>
           Mensaje
-          <textarea name="message" rows="5" placeholder="Describe el proyecto"></textarea>
+          <textarea name="message" rows="5" placeholder="Describe el proyecto o la invocacion"></textarea>
         </label>
         <button class="button-primary" type="submit">Abrir portal</button>
       </form>

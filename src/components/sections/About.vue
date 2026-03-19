@@ -16,6 +16,10 @@ defineProps({
     type: String,
     required: true,
   },
+  links: {
+    type: Array,
+    default: () => [],
+  },
 })
 </script>
 
@@ -30,6 +34,11 @@ defineProps({
         <h2>{{ name }}</h2>
         <p class="about-role">{{ role }}</p>
         <p>{{ bio }}</p>
+        <div class="social-links about-links">
+          <a v-for="link in links" :key="link.label" :href="link.href" target="_blank" rel="noreferrer">
+            {{ link.label }}<span v-if="link.text">: {{ link.text }}</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>

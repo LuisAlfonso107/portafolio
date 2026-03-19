@@ -16,7 +16,7 @@ defineProps({
         <p class="eyebrow">Archivo oscuro</p>
         <h2>Proyectos resucitados</h2>
         <p>
-          Productos y experiencias donde el detalle visual convive con arquitectura clara y tiempos de carga disciplinados.
+          Cuatro trabajos reales donde producto, narrativa visual y ejecucion tecnica comparten la misma tumba.
         </p>
       </div>
       <div class="projects-grid">
