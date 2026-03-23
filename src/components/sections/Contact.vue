@@ -11,11 +11,7 @@ defineProps({
   <section id="contact" class="section">
     <div class="container contact-grid">
       <div class="contact-copy">
-        <p class="eyebrow">Ultimo ritual</p>
-        <h2>Invocame... si te atreves</h2>
-        <p>
-          Si buscas un portfolio con identidad, rendimiento y criterio tecnico, aqui termina la niebla y empieza la conversacion.
-        </p>
+        <h2>Contacto</h2>
         <div class="social-links">
           <a v-for="link in socialLinks" :key="link.label" :href="link.href" target="_blank" rel="noreferrer">
             {{ link.label }}<span v-if="link.text">: {{ link.text }}</span>
@@ -33,9 +29,9 @@ defineProps({
         </label>
         <label>
           Mensaje
-          <textarea name="message" rows="5" placeholder="Describe el proyecto o la invocacion"></textarea>
+          <textarea name="message" rows="5" placeholder="Describe el proyecto o pregunta lo que quieras"></textarea>
         </label>
-        <button class="button-primary" type="submit">Abrir portal</button>
+        <button class="button-primary" type="submit">Enviar</button>
       </form>
     </div>
   </section>

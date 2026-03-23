@@ -46,14 +46,9 @@ onMounted(() => {
       <span class="bone finger finger-four"></span>
     </div>
     <div class="container hero-content">
-      <p class="hero-kicker">Bosque maldito. Niebla azul. Presencia infernal.</p>
       <h1 class="hero-title">{{ name }}</h1>
       <p class="hero-subtitle">{{ title }}</p>
       <p class="hero-copy">{{ summary }}</p>
-      <div class="hero-actions">
-        <a class="button-primary" href="#projects">ENTRA SI TE ATREVES</a>
-        <a class="button-secondary" href="#contact">Invocar contacto</a>
-      </div>
     </div>
   </section>
 </template>

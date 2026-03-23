@@ -75,12 +75,12 @@ const socialLinks = [
     <Hero
       name="Luis Alfonso Garcia "
       title="Full-Stack"
-      summary="Desarrollo experiencias web con presencia oscura, precision visual y rendimiento disciplinado desde Espana."
+      summary="Desarrollo experiencias web con precision visual y rendimiento."
     />
     <About
       name="Luis Alfonso Garcia "
       role="Full-Stack "
-      bio="Soy Luis Alfonso Garcia Lagos, desarrollador Full-Stack desde Espana. Me especializo en crear experiencias web que aterrorizan por su calidad: Vue, React, Tailwind, Node.js y mas. Actualmente invoco interfaces desde el abismo."
+      bio="Soy Luis Alfonso Garcia Lagos, desarrollador Full-Stack. Me especializo en crear experiencia por su calidad y la capacidad de adaptarme a nuevas tecnologias: Vue, React, Tailwind, Node.js y mas. Actualmente invoco interfaces desde el abismo."
       :links="aboutLinks"
       :image-url="aboutPortrait"
     />

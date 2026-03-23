@@ -13,10 +13,9 @@ defineProps({
   <section id="projects" class="section section-panel">
     <div class="container">
       <div class="section-heading">
-        <p class="eyebrow">Archivo oscuro</p>
-        <h2>Proyectos resucitados</h2>
+        <h2>Proyectos</h2>
         <p>
-          Cuatro trabajos reales donde producto, narrativa visual y ejecucion tecnica comparten la misma tumba.
+          Trabajos realizados recientemente...
         </p>
       </div>
       <div class="projects-grid">
