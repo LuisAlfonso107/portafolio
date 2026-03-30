@@ -496,15 +496,23 @@ textarea {
   width: min(18rem, 36vw);
   height: min(18rem, 34vw);
   transform: rotate(-14deg);
-  opacity: 0.92;
-  filter: drop-shadow(0 0 20px rgba(74, 158, 255, 0.16));
+  --base-opacity: 0.92;
+  opacity: var(--base-opacity);
+  filter: drop-shadow(0 0 24px rgba(74, 158, 255, 0.25)) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+  will-change: transform, opacity, filter;
+  animation: skeletalPulse 8s infinite alternate ease-in-out;
 }
 
 .bone {
   position: absolute;
   display: block;
-  background: linear-gradient(180deg, rgba(237, 245, 255, 0.95), rgba(184, 200, 224, 0.9));
-  box-shadow: 0 0 18px rgba(74, 158, 255, 0.2);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.95) 0%, rgba(200, 220, 240, 0.8) 40%, rgba(140, 160, 190, 0.9) 100%);
+  box-shadow: 
+    inset -4px -4px 12px rgba(10, 20, 40, 0.5),
+    inset 4px 4px 10px rgba(255, 255, 255, 0.8),
+    0 0 18px rgba(74, 158, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  will-change: transform;
 }
 
 .palm {
@@ -532,42 +540,99 @@ textarea {
   border-radius: 999px;
   background: inherit;
   box-shadow: inherit;
+  border: inherit;
+  will-change: transform;
 }
 
 .finger::before {
   bottom: 55%;
   height: 52%;
-  transform: rotate(3deg);
+  --base-rot: 3deg;
+  transform: rotate(var(--base-rot));
+  transform-origin: bottom center;
 }
 
 .finger::after {
   bottom: 104%;
   height: 46%;
-  transform: rotate(-4deg);
+  --base-rot: -4deg;
+  transform: rotate(var(--base-rot));
+  transform-origin: bottom center;
 }
 
 .finger-one {
   left: 18%;
   height: 34%;
-  transform: rotate(-18deg);
+  --base-rot: -18deg;
+  transform: rotate(var(--base-rot));
+  animation: fingerTwitch 4.3s infinite alternate ease-in-out -1.2s;
 }
+.finger-one::before { animation: phalangeTwitch 3.8s infinite alternate ease-in-out -0.5s; }
+.finger-one::after { animation: phalangeTwitch 4.1s infinite alternate ease-in-out -2.1s; }
 
 .finger-two {
   left: 31%;
   height: 42%;
-  transform: rotate(-6deg);
+  --base-rot: -6deg;
+  transform: rotate(var(--base-rot));
+  animation: fingerTwitch 3.7s infinite alternate ease-in-out -2.4s;
 }
+.finger-two::before { animation: phalangeTwitch 4.5s infinite alternate ease-in-out -1.1s; }
+.finger-two::after { animation: phalangeTwitch 3.2s infinite alternate ease-in-out -0.3s; }
 
 .finger-three {
   left: 45%;
   height: 46%;
-  transform: rotate(4deg);
+  --base-rot:  4deg;
+  transform: rotate(var(--base-rot));
+  animation: fingerTwitch 4.8s infinite alternate ease-in-out -0.7s;
 }
+.finger-three::before { animation: phalangeTwitch 3.5s infinite alternate ease-in-out -3.2s; }
+.finger-three::after { animation: phalangeTwitch 4.9s infinite alternate ease-in-out -1.8s; }
 
 .finger-four {
   left: 59%;
   height: 38%;
-  transform: rotate(16deg);
+  --base-rot: 16deg;
+  transform: rotate(var(--base-rot));
+  animation: fingerTwitch 5.1s infinite alternate ease-in-out -3.5s;
+}
+.finger-four::before { animation: phalangeTwitch 4.2s infinite alternate ease-in-out -0.8s; }
+.finger-four::after { animation: phalangeTwitch 3.6s infinite alternate ease-in-out -2.7s; }
+
+/* Hand animations */
+@keyframes skeletalPulse {
+  0% {
+    transform: rotate(-14deg) translateY(0) scale(1);
+    opacity: calc(var(--base-opacity, 0.92) - 0.07);
+    filter: drop-shadow(0 0 20px rgba(74, 158, 255, 0.15)) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+  }
+  33% {
+    transform: rotate(-12deg) translateY(-8px) scale(1.02);
+    opacity: calc(var(--base-opacity, 0.92) + 0.03);
+    filter: drop-shadow(0 0 35px rgba(74, 158, 255, 0.35)) drop-shadow(0 15px 20px rgba(0, 0, 0, 0.5));
+  }
+  66% {
+    transform: rotate(-15deg) translateY(-3px) scale(0.99);
+    opacity: calc(var(--base-opacity, 0.92) - 0.04);
+  }
+  100% {
+    transform: rotate(-13deg) translateY(4px) scale(1.01);
+    opacity: var(--base-opacity, 0.92);
+    filter: drop-shadow(0 0 25px rgba(74, 158, 255, 0.25)) drop-shadow(0 12px 18px rgba(0, 0, 0, 0.45));
+  }
+}
+
+@keyframes fingerTwitch {
+  0% { transform: rotate(calc(var(--base-rot, 0deg) - 2deg)); }
+  50% { transform: rotate(calc(var(--base-rot, 0deg) + 3deg)) scaleY(1.02); }
+  100% { transform: rotate(calc(var(--base-rot, 0deg) - 1deg)); }
+}
+
+@keyframes phalangeTwitch {
+  0% { transform: rotate(calc(var(--base-rot, 0deg) - 3deg)); }
+  50% { transform: rotate(calc(var(--base-rot, 0deg) + 4deg)); }
+  100% { transform: rotate(calc(var(--base-rot, 0deg) - 1deg)); }
 }
 
 .project-art-amalur,
@@ -731,6 +796,7 @@ textarea {
     bottom: 1rem;
     width: min(14rem, 46vw);
     height: min(14rem, 42vw);
-    opacity: 0.72;
+    --base-opacity: 0.72;
+    opacity: var(--base-opacity);
   }
 }
