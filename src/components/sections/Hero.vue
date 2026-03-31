@@ -38,12 +38,57 @@ onMounted(() => {
     <div class="hero-backdrop"></div>
     <div class="fog-layer fog-layer-one"></div>
     <div class="fog-layer fog-layer-two"></div>
-    <div class="skeletal-hand" aria-hidden="true">
-      <span class="bone palm"></span>
-      <span class="bone finger finger-one"></span>
-      <span class="bone finger finger-two"></span>
-      <span class="bone finger finger-three"></span>
-      <span class="bone finger finger-four"></span>
+    <div class="horror-elements" aria-hidden="true">
+      <div class="skeletal-hand horror-hand hand-a">
+        <span class="bone palm"></span>
+        <span class="bone finger finger-1"></span>
+        <span class="bone finger finger-2"></span>
+        <span class="bone finger finger-3"></span>
+        <span class="bone finger finger-4"></span>
+      </div>
+      <div class="skeletal-hand horror-hand hand-b">
+        <span class="bone palm"></span>
+        <span class="bone finger finger-1"></span>
+        <span class="bone finger finger-2"></span>
+        <span class="bone finger finger-3"></span>
+        <span class="bone finger finger-4"></span>
+      </div>
+      <div class="skeletal-hand horror-hand hand-c">
+        <span class="bone palm"></span>
+        <span class="bone finger finger-1"></span>
+        <span class="bone finger finger-2"></span>
+        <span class="bone finger finger-3"></span>
+        <span class="bone finger finger-4"></span>
+      </div>
+      <div class="spider spider-a">
+        <span class="spider-body"></span>
+        <span class="spider-leg leg-1"></span>
+        <span class="spider-leg leg-2"></span>
+        <span class="spider-leg leg-3"></span>
+        <span class="spider-leg leg-4"></span>
+      </div>
+      <div class="spider spider-b">
+        <span class="spider-body"></span>
+        <span class="spider-leg leg-1"></span>
+        <span class="spider-leg leg-2"></span>
+        <span class="spider-leg leg-3"></span>
+        <span class="spider-leg leg-4"></span>
+      </div>
+      <div class="spider spider-c">
+        <span class="spider-body"></span>
+        <span class="spider-leg leg-1"></span>
+        <span class="spider-leg leg-2"></span>
+        <span class="spider-leg leg-3"></span>
+        <span class="spider-leg leg-4"></span>
+      </div>
+      <div class="horror-grain"></div>
+      <div class="horror-haze"></div>
+      <div class="horror-embers">
+        <span class="horror-ember ember-1"></span>
+        <span class="horror-ember ember-2"></span>
+        <span class="horror-ember ember-3"></span>
+        <span class="horror-ember ember-4"></span>
+      </div>
     </div>
     <div class="container hero-content">
       <h1 class="hero-title">{{ name }}</h1>
