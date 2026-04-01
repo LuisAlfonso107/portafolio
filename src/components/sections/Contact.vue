@@ -255,10 +255,9 @@ onBeforeUnmount(() => {
     </div>
 
     <div class="container contact-shell">
-      <p class="contact-kicker">Ritual De Contacto</p>
-      <h2 id="contact-title" class="contact-title">Abre El Portal</h2>
+      <h2 id="contact-title" class="contact-title">Contacto</h2>
       <p class="contact-summary">
-        Sin formulario. Solo puertas directas para hablar conmigo en redes y canales activos.
+      Estos son los canales en los cuales podras comunicarte conmigo.
       </p>
 
       <ul class="contact-links">

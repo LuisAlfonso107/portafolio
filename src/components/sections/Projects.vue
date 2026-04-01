@@ -257,10 +257,9 @@ onBeforeUnmount(() => {
     </div>
 
     <div class="container projects-shell">
-      <p class="projects-kicker">Catalogo Del Vacio</p>
-      <h2 id="projects-title" class="projects-title">Proyectos Invocados</h2>
+      <h2 id="projects-title" class="projects-title">Proyectos</h2>
       <p class="projects-summary">
-        Cada artefacto abre una salida real: demostraciones activas y codigo cuando esta disponible.
+        Cada enlace es una salida real a demostraciones activas y codigo realizado.
       </p>
 
       <ul class="projects-grid-ritual">
