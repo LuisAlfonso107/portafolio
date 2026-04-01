@@ -11,8 +11,10 @@ const props = defineProps({
 const navRoot = ref(null)
 const menuOpen = ref(false)
 const compact = ref(false)
+const hidden = ref(false)
 
 let ticking = false
+let lastScrollY = 0
 
 const applyReveal = () => {
   const root = navRoot.value
@@ -25,6 +27,19 @@ const applyReveal = () => {
   const corruption = Math.min(1, Math.max(0, (y - 70) / 360))
 
   compact.value = y > 46
+
+  if (menuOpen.value) {
+    hidden.value = false
+  } else {
+    const delta = y - lastScrollY
+    if (y > 92 && delta > 3) {
+      hidden.value = true
+    } else if (delta < -3 || y < 24) {
+      hidden.value = false
+    }
+  }
+
+  lastScrollY = y
 
   root.style.setProperty('--reveal', reveal.toFixed(3))
   root.style.setProperty('--reveal-two', revealTwo.toFixed(3))
@@ -63,9 +78,13 @@ const toggleMenu = () => {
 
 watch(menuOpen, (open) => {
   document.body.style.overflow = open ? 'hidden' : ''
+  if (open) {
+    hidden.value = false
+  }
 })
 
 onMounted(() => {
+  lastScrollY = window.scrollY || window.pageYOffset || 0
   applyReveal()
   window.addEventListener('scroll', onScroll, { passive: true })
   window.addEventListener('resize', onResize, { passive: true })
@@ -81,7 +100,11 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <header ref="navRoot" class="super-nav" :class="{ 'is-compact': compact, 'menu-open': menuOpen }">
+  <header
+    ref="navRoot"
+    class="super-nav"
+    :class="{ 'is-compact': compact, 'menu-open': menuOpen, 'is-hidden': hidden }"
+  >
     <div class="super-nav-cinematic" aria-hidden="true">
       <div class="old-photo photo-a" aria-hidden="true"></div>
       <div class="old-photo photo-b" aria-hidden="true"></div>
@@ -154,15 +177,19 @@ onBeforeUnmount(() => {
   top: 0;
   z-index: 60;
   isolation: isolate;
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 200ms ease;
+}
+
+.super-nav.is-hidden {
+  transform: translateY(calc(-100% - 1.2rem));
+  opacity: 0;
+  pointer-events: none;
 }
 
 .super-nav-cinematic {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  opacity: calc(0.1 + (var(--reveal) * 0.78));
-  filter: saturate(0.58) contrast(1.08) grayscale(0.92);
+  display: none;
 }
 
 .old-photo,
@@ -235,30 +262,20 @@ onBeforeUnmount(() => {
   justify-content: space-between;
   gap: 1rem;
   padding: clamp(0.95rem, 2.1vw, 1.25rem) clamp(1rem, 2vw, 1.4rem);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
-  margin-top: 0.9rem;
-  background: linear-gradient(180deg, rgba(8, 12, 20, 0.72), rgba(4, 6, 12, 0.8));
-  backdrop-filter: blur(16px);
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.04),
-    0 16px 34px rgba(0, 0, 0, 0.46),
-    0 0 24px rgba(74, 158, 255, calc(0.06 + (var(--reveal) * 0.2)));
+  border: none;
+  border-radius: 0;
+  margin-top: 0.35rem;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
   transition:
-    border-radius 260ms ease,
     padding 260ms ease,
-    box-shadow 260ms ease,
     transform 260ms ease;
 }
 
 .is-compact .super-nav-bar {
   padding-top: 0.66rem;
   padding-bottom: 0.66rem;
-  border-radius: 20px;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.05),
-    0 10px 22px rgba(0, 0, 0, 0.48),
-    0 0 18px rgba(74, 158, 255, 0.18);
 }
 
 .super-brand {
@@ -297,11 +314,10 @@ onBeforeUnmount(() => {
   padding: 0.48rem 0.82rem;
   border-radius: 999px;
   color: rgba(224, 234, 248, 0.85);
-  border: 1px solid transparent;
+  border: none;
   transition:
     transform 180ms ease,
     color 180ms ease,
-    border-color 180ms ease,
     box-shadow 180ms ease,
     background-color 180ms ease;
 }
@@ -320,11 +336,8 @@ onBeforeUnmount(() => {
 .super-link:focus-visible {
   color: #fff;
   transform: translateY(-1px);
-  border-color: rgba(255, 255, 255, 0.24);
-  background: rgba(10, 18, 33, 0.58);
-  box-shadow:
-    0 0 0 1px rgba(74, 158, 255, 0.24),
-    0 0 16px rgba(74, 158, 255, 0.18);
+  background: transparent;
+  box-shadow: 0 0 16px rgba(74, 158, 255, 0.2);
 }
 
 .super-link:hover::before,
@@ -337,9 +350,9 @@ onBeforeUnmount(() => {
   width: 3rem;
   height: 3rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  background: linear-gradient(180deg, rgba(10, 18, 33, 0.86), rgba(2, 4, 10, 0.92));
-  box-shadow: 0 0 16px rgba(74, 158, 255, 0.2);
+  border: none;
+  background: transparent;
+  box-shadow: none;
   padding: 0.58rem;
   gap: 0.3rem;
   align-items: center;
@@ -463,8 +476,7 @@ onBeforeUnmount(() => {
   }
 
   .super-nav-bar {
-    border-radius: 20px;
-    margin-top: 0.45rem;
+    margin-top: 0.15rem;
   }
 }
 

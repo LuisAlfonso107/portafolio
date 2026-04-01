@@ -30,7 +30,7 @@ defineProps({
         <img :src="imageUrl" :alt="name" loading="lazy" />
       </div>
       <div class="about-copy">
-        <p class="eyebrow">Mi historia</p>
+        <p class="eyebrow">Sobre mi</p>
         <h2>{{ name }}</h2>
         <p class="about-role">{{ role }}</p>
         <p>{{ bio }}</p>
