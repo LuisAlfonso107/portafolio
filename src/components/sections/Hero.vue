@@ -41,6 +41,7 @@ onMounted(() => {
     <div class="horror-elements" aria-hidden="true">
       <div class="skeletal-hand horror-hand hand-a">
         <span class="bone palm"></span>
+        <span class="bone thumb"><i></i></span>
         <span class="bone finger finger-1"><i></i></span>
         <span class="bone finger finger-2"><i></i></span>
         <span class="bone finger finger-3"><i></i></span>
@@ -48,6 +49,7 @@ onMounted(() => {
       </div>
       <div class="skeletal-hand horror-hand hand-b">
         <span class="bone palm"></span>
+        <span class="bone thumb"><i></i></span>
         <span class="bone finger finger-1"><i></i></span>
         <span class="bone finger finger-2"><i></i></span>
         <span class="bone finger finger-3"><i></i></span>
@@ -55,6 +57,7 @@ onMounted(() => {
       </div>
       <div class="skeletal-hand horror-hand hand-c">
         <span class="bone palm"></span>
+        <span class="bone thumb"><i></i></span>
         <span class="bone finger finger-1"><i></i></span>
         <span class="bone finger finger-2"><i></i></span>
         <span class="bone finger finger-3"><i></i></span>
