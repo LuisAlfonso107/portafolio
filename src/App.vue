@@ -72,21 +72,40 @@ const socialLinks = [
 <template>
   <div class="app-shell">
     <Navbar :items="navItems" />
-    <Hero
-      name="Luis Alfonso Garcia "
-      title="Full-Stack"
-      summary="Desarrollo experiencias web con precision visual y rendimiento."
-    />
-    <About
-      name="Luis Alfonso Garcia "
-      role="Full-Stack "
-      bio="Soy Luis Alfonso Garcia Lagos, desarrollador Full-Stack. Me especializo en crear experiencia por su calidad y la capacidad de adaptarme a nuevas tecnologias: Vue, React, Tailwind, Node.js y mas. Actualmente invoco interfaces desde el abismo."
-      :links="aboutLinks"
-      :image-url="aboutPortrait"
-    />
-    <Projects :projects="projects" />
-    <Skills :items="skills" />
-    <Contact :social-links="socialLinks" />
+    <div class="fusion-zone zone-black seep-blue edge-black-to-blue">
+      <span class="fusion-branches" aria-hidden="true"></span>
+      <Hero
+        name="Luis Alfonso Garcia "
+        title="Full-Stack"
+        summary="Desarrollo experiencias web con precision visual y rendimiento."
+      />
+    </div>
+
+    <div class="fusion-zone zone-blue devoured-by-black edge-blue-to-black">
+      <span class="fusion-branches" aria-hidden="true"></span>
+      <About
+        name="Luis Alfonso Garcia "
+        role="Full-Stack "
+        bio="Soy Luis Alfonso Garcia Lagos, desarrollador Full-Stack. Me especializo en crear experiencia por su calidad y la capacidad de adaptarme a nuevas tecnologias: Vue, React, Tailwind, Node.js y mas. Actualmente invoco interfaces desde el abismo."
+        :links="aboutLinks"
+        :image-url="aboutPortrait"
+      />
+    </div>
+
+    <div class="fusion-zone zone-black seep-blue edge-black-to-blue">
+      <span class="fusion-branches" aria-hidden="true"></span>
+      <Projects :projects="projects" />
+    </div>
+
+    <div class="fusion-zone zone-blue devoured-by-black edge-blue-to-black">
+      <span class="fusion-branches" aria-hidden="true"></span>
+      <Skills :items="skills" />
+    </div>
+
+    <div class="fusion-zone zone-black seep-blue">
+      <span class="fusion-branches" aria-hidden="true"></span>
+      <Contact :social-links="socialLinks" />
+    </div>
     <Footer github-url="https://github.com/LuisAlfonso107" />
   </div>
 </template>
