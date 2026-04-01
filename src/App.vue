@@ -1,7 +1,7 @@
 <script setup>
 import aboutPortrait from './assets/Captura de pantalla 2026-03-19 133450.png'
 import Footer from './components/layout/Footer.vue'
-import Navbar from './components/layout/Navbar.vue'
+import SuperMegaNav from './components/layout/SuperMegaNav.vue'
 import About from './components/sections/About.vue'
 import Contact from './components/sections/Contact.vue'
 import Hero from './components/sections/Hero.vue'
@@ -71,9 +71,11 @@ const socialLinks = [
 
 <template>
   <div class="app-shell">
-    <Navbar :items="navItems" />
+    <SuperMegaNav :items="navItems" />
     <div class="fusion-zone zone-black seep-blue edge-black-to-blue">
       <span class="fusion-branches" aria-hidden="true"></span>
+      <span class="fusion-rift" aria-hidden="true"></span>
+      <span class="fusion-presence" aria-hidden="true"></span>
       <Hero
         name="Luis Alfonso Garcia "
         title="Full-Stack"
@@ -83,6 +85,8 @@ const socialLinks = [
 
     <div class="fusion-zone zone-blue devoured-by-black edge-blue-to-black">
       <span class="fusion-branches" aria-hidden="true"></span>
+      <span class="fusion-rift" aria-hidden="true"></span>
+      <span class="fusion-presence" aria-hidden="true"></span>
       <About
         name="Luis Alfonso Garcia "
         role="Full-Stack "
@@ -94,16 +98,22 @@ const socialLinks = [
 
     <div class="fusion-zone zone-black seep-blue edge-black-to-blue">
       <span class="fusion-branches" aria-hidden="true"></span>
+      <span class="fusion-rift" aria-hidden="true"></span>
+      <span class="fusion-presence" aria-hidden="true"></span>
       <Projects :projects="projects" />
     </div>
 
     <div class="fusion-zone zone-blue devoured-by-black edge-blue-to-black">
       <span class="fusion-branches" aria-hidden="true"></span>
+      <span class="fusion-rift" aria-hidden="true"></span>
+      <span class="fusion-presence" aria-hidden="true"></span>
       <Skills :items="skills" />
     </div>
 
     <div class="fusion-zone zone-black seep-blue">
       <span class="fusion-branches" aria-hidden="true"></span>
+      <span class="fusion-rift" aria-hidden="true"></span>
+      <span class="fusion-presence" aria-hidden="true"></span>
       <Contact :social-links="socialLinks" />
     </div>
     <Footer github-url="https://github.com/LuisAlfonso107" />
