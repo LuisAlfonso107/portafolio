@@ -406,7 +406,20 @@ onBeforeUnmount(() => {
   overflow: hidden;
   isolation: isolate;
   color: #f1f1f1;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-abyss::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(74, 158, 255, 0.08), transparent 42%),
+    linear-gradient(180deg, rgba(9, 16, 30, 0.28), rgba(4, 8, 16, 0.22));
+  box-shadow:
+    inset 0 -18px 28px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(74, 158, 255, 0.12);
 }
 
 .hero-nightmare {
@@ -860,6 +873,11 @@ onBeforeUnmount(() => {
   width: min(60% - 1rem);
   margin-bottom: clamp(3.2rem, 10vw, 9.5rem);
   padding: clamp(1.4rem, 3.4vw, 2.2rem);
+  border: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .hero-kicker {
