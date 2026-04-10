@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&family=UnifrakturCook:wght@700&display=swap');
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
   --bg: #0a1324;

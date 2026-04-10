@@ -137,8 +137,8 @@ onBeforeUnmount(() => {
       <a class="super-brand" href="#hero" aria-label="Ir al inicio del portafolio">
         <span class="brand-glyph" aria-hidden="true">XIII</span>
         <span class="brand-copy">
-          <span class="brand-title">Obsidian Archive</span>
-          <span class="brand-subtitle">Portafolio de Luis Alfonso</span>
+          <span class="brand-title">Portafolio</span>
+          <span class="brand-subtitle">Luis Alfonso</span>
         </span>
       </a>
 

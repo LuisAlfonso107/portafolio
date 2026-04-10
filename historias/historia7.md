@@ -18,7 +18,7 @@ Entonces se debe mostrar:
 - Subtítulo: **Desarrollador de Software Full Stack**
 - Breve descripción profesional (2-3 líneas)
 - Enlaces discretos a GitHub, LinkedIn y Discord
-- Aspecto minimalista, serio y corporativo
+- Aspecto minimalista, serio y corporativo nada del diseño actual
 
 **Escenario 2: Transformación al Interactuar**
 Dado que el usuario realiza cualquier acción (scroll hacia abajo o mueve el mouse)  
@@ -26,8 +26,8 @@ Cuando se detecta la primera interacción
 Entonces:
 - El componente debe **transformarse inmediatamente** al diseño terrorífico actual (fondo #0A1324, niebla azul, glow #4A9EFF, atmósfera de calabozo)
 - La transición debe ser cinematográfica y fluida (usando GSAP)
-- La foto, el texto y los colores deben cambiar progresivamente
-- Una vez transformado, debe quedarse en el estado terrorífico durante toda la sesión
+- La foto, el texto y los colores y toda la pagina deben cambiar progresivamente al estado actual
+- Una vez transformado, debe quedarse en el estado actualdurante toda la sesión
 
 **Escenario 3: Comportamiento Técnico**
 - La transformación debe activarse con el **primer movimiento** del mouse o el primer scroll
@@ -36,7 +36,7 @@ Entonces:
 - Mantener todas las animaciones GSAP del diseño terrorífico actual
 
 **Escenario 4: Responsive**
-- El estado formal debe verse excelente en móvil y desktop
+- El estado formal debe verse exceleQuiero que evalues este achivo y que realices las tareas que ahi se solicitan C:\Users\Luis Alfonso\portafolio\historias\historia7.mdnte en móvil y desktop
 - La transición debe funcionar correctamente en todos los dispositivos
 
 **Notas**

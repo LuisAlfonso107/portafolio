@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from 'vue'
+import FormalPortfolio from './components/sections/FormalPortfolio.vue'
 import aboutPortrait from './assets/Captura de pantalla 2026-03-19 133450.png'
 import Footer from './components/layout/Footer.vue'
 import SuperMegaNav from './components/layout/SuperMegaNav.vue'
@@ -9,7 +11,7 @@ import Projects from './components/sections/Projects.vue'
 import Skills from './components/sections/Skills.vue'
 
 const navItems = [
-  { label: 'Invocacion', href: '#hero' },
+  { label: 'Inicio', href: '#hero' },
   { label: 'Sobre mi', href: '#about' },
   { label: 'Proyectos', href: '#projects' },
   { label: 'Habilidades', href: '#skills' },
@@ -67,55 +69,77 @@ const socialLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/luis-alfonso-garcia-lagos-27b70722a' },
   { label: 'Discord', href: 'https://discord.com/users/oneoseven107', text: 'oneoseven107' },
 ]
+
+const showFormalPortfolio = ref(true)
+
+const continueToHorrorTheme = () => {
+  showFormalPortfolio.value = false
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 </script>
 
 <template>
-  <div class="app-shell">
-    <SuperMegaNav :items="navItems" />
-    <div class="fusion-zone zone-black seep-blue edge-black-to-blue">
-      <span class="fusion-branches" aria-hidden="true"></span>
-      <span class="fusion-rift" aria-hidden="true"></span>
-      <span class="fusion-presence" aria-hidden="true"></span>
-      <Hero
-        name="Luis Alfonso Garcia "
-        title="Full-Stack"
-        summary="Desarrollo experiencias web con precision visual y rendimiento."
-      />
-    </div>
+  <Transition name="fade" mode="out-in">
+    <FormalPortfolio v-if="showFormalPortfolio" @continue="continueToHorrorTheme" />
+    <div v-else class="app-shell">
+      <SuperMegaNav :items="navItems" />
+      <div class="fusion-zone zone-black seep-blue edge-black-to-blue">
+        <span class="fusion-branches" aria-hidden="true"></span>
+        <span class="fusion-rift" aria-hidden="true"></span>
+        <span class="fusion-presence" aria-hidden="true"></span>
+        <Hero
+          name="Luis Alfonso Garcia "
+          title="Full-Stack"
+          summary="Desarrollo experiencias web con precision visual y rendimiento."
+        />
+      </div>
 
-    <div class="fusion-zone zone-blue devoured-by-black edge-blue-to-black">
-      <span class="fusion-branches" aria-hidden="true"></span>
-      <span class="fusion-rift" aria-hidden="true"></span>
-      <span class="fusion-presence" aria-hidden="true"></span>
-      <About
-        name="Luis Alfonso Garcia "
-        role="Full-Stack "
-        bio="Soy Luis Alfonso Garcia Lagos, desarrollador Full-Stack. Me especializo en crear experiencia por su calidad y la capacidad de adaptarme a nuevas tecnologias: Vue, React, Tailwind, Node.js y mas. Actualmente invoco interfaces desde el abismo."
-        :links="aboutLinks"
-        :image-url="aboutPortrait"
-      />
-    </div>
+      <div class="fusion-zone zone-blue devoured-by-black edge-blue-to-black">
+        <span class="fusion-branches" aria-hidden="true"></span>
+        <span class="fusion-rift" aria-hidden="true"></span>
+        <span class="fusion-presence" aria-hidden="true"></span>
+        <About
+          name="Luis Alfonso Garcia "
+          role="Full-Stack "
+          bio="Soy Luis Alfonso Garcia Lagos, desarrollador Full-Stack. Me especializo en crear experiencia por su calidad y la capacidad de adaptarme a nuevas tecnologias: Vue, React, Tailwind, Node.js y mas. Actualmente invoco interfaces desde el abismo."
+          :links="aboutLinks"
+          :image-url="aboutPortrait"
+        />
+      </div>
 
-    <div class="fusion-zone zone-black seep-blue edge-black-to-blue">
-      <span class="fusion-branches" aria-hidden="true"></span>
-      <span class="fusion-rift" aria-hidden="true"></span>
-      <span class="fusion-presence" aria-hidden="true"></span>
-      <Projects :projects="projects" />
-    </div>
+      <div class="fusion-zone zone-black seep-blue edge-black-to-blue">
+        <span class="fusion-branches" aria-hidden="true"></span>
+        <span class="fusion-rift" aria-hidden="true"></span>
+        <span class="fusion-presence" aria-hidden="true"></span>
+        <Projects :projects="projects" />
+      </div>
 
-    <div class="fusion-zone zone-blue devoured-by-black edge-blue-to-black">
-      <span class="fusion-branches" aria-hidden="true"></span>
-      <span class="fusion-rift" aria-hidden="true"></span>
-      <span class="fusion-presence" aria-hidden="true"></span>
-      <Skills :items="skills" />
-    </div>
+      <div class="fusion-zone zone-blue devoured-by-black edge-blue-to-black">
+        <span class="fusion-branches" aria-hidden="true"></span>
+        <span class="fusion-rift" aria-hidden="true"></span>
+        <span class="fusion-presence" aria-hidden="true"></span>
+        <Skills :items="skills" />
+      </div>
 
-    <div class="fusion-zone zone-black seep-blue">
-      <span class="fusion-branches" aria-hidden="true"></span>
-      <span class="fusion-rift" aria-hidden="true"></span>
-      <span class="fusion-presence" aria-hidden="true"></span>
-      <Contact :social-links="socialLinks" />
+      <div class="fusion-zone zone-black seep-blue">
+        <span class="fusion-branches" aria-hidden="true"></span>
+        <span class="fusion-rift" aria-hidden="true"></span>
+        <span class="fusion-presence" aria-hidden="true"></span>
+        <Contact :social-links="socialLinks" />
+      </div>
+      <Footer github-url="https://github.com/LuisAlfonso107" />
     </div>
-    <Footer github-url="https://github.com/LuisAlfonso107" />
-  </div>
+  </Transition>
 </template>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1.2s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

@@ -520,7 +520,7 @@ onBeforeUnmount(() => {
   height: 100%;
   border: 1px solid rgba(12, 65, 91, 0.16);
   border-radius: 18px;
-  background: linear-gradient(180deg, rgba(3, 3, 3, 0.5), rgba(0, 0, 0, 0.84));
+  background: linear-gradient(180deg, rgb(186, 183, 183), rgba(0, 0, 0, 0.84));
   box-shadow: 0 14px 28px rgba(15, 62, 98, 0.44), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   overflow: hidden;
   transform-style: preserve-3d;
