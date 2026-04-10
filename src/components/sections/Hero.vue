@@ -871,7 +871,7 @@ onBeforeUnmount(() => {
   z-index: 2;
   margin-left: 8%;
   width: min(60% - 1rem);
-  margin-bottom: clamp(3.2rem, 10vw, 9.5rem);
+  margin-bottom: clamp(5rem, 14vw, 12rem);
   padding: clamp(1.4rem, 3.4vw, 2.2rem);
   border: none;
   background: transparent;

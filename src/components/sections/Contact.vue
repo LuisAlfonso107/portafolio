@@ -511,7 +511,7 @@ onBeforeUnmount(() => {
   position: relative;
   z-index: 2;
   padding-top: clamp(5rem, 12vw, 8rem);
-  padding-bottom: clamp(4rem, 10vw, 7rem);
+  padding-bottom: clamp(8rem, 18vw, 14rem);
 }
 
 .contact-kicker {

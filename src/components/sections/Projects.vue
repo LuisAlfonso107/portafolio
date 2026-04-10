@@ -479,7 +479,7 @@ onBeforeUnmount(() => {
   position: relative;
   z-index: 2;
   padding-top: clamp(5rem, 11vw, 7.2rem);
-  padding-bottom: clamp(4rem, 10vw, 6.8rem);
+  padding-bottom: clamp(8rem, 18vw, 14rem);
 }
 
 .projects-kicker {

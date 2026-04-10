@@ -1,74 +1,77 @@
-### Historia de Usuario US-025
-**Implementar un Super Mega Nav con scroll revelador de imágenes terroríficas antiguas y efectos cinematográficos**
+### Historia de Usuario US-031
+**Crear componente de Primera Impresión Formal que se transforma en Tema Terrorífico al interactuar**
 
-**Como** desarrollador frontend  
-**Quiero** crear un navbar avanzado ("Super Mega Nav") que al hacer scroll muestre y revele imágenes antiguas terroríficas  
-**Para** generar una experiencia inmersiva, oscura y perturbadora desde el primer momento que el usuario navega por la página
+**Como** Luis Alfonso García Lagos, desarrollador Full Stack  
+**Quiero** un componente inicial que muestre una versión **seria, limpia y formal** de mi información personal (fondo blanco hueso),  
+**Para** generar una primera impresión profesional y luego, al detectar cualquier interacción del usuario (scroll o movimiento del mouse), transformarse inmediatamente en el actual diseño terrorífico oscuro del portafolio.
 
 **Criterios de Aceptación**
 
-**Escenario 1: Diseño general del Super Mega Nav**
-Dado que el usuario carga cualquier página  
-Cuando aparece el navbar  
-Entonces debe ser un **Super Mega Nav** con:
-- Diseño oscuro, premium y cinematográfico
-- Altura variable (se expande o contrae según scroll)
-- Fondo con efecto glassmorphism oscuro o semi-transparente
-- Logo a la izquierda con estilo terrorífico
-- Enlaces de navegación elegantes (Home, Portafolio, Sobre mí, Contacto, etc.)
+**Escenario 1: Estado Inicial (Formal)**
+Dado que el usuario entra por primera vez al portafolio  
+Cuando se carga la página  
+Entonces se debe mostrar:
+- Un diseño **totalmente formal y profesional**
+- Fondo en tono blanco hueso (`#F8F1E9` o `#F5F0E6`)
+- Foto mía centrada o en layout elegante
+- Nombre completo: **Luis Alfonso García** en tipografía limpia y elegante
+- Subtítulo: **Desarrollador de Software Full Stack**
+- Breve descripción profesional (2-3 líneas)
+- Enlaces discretos a GitHub, LinkedIn y Discord
+- Aspecto minimalista, serio y corporativo
 
-**Escenario 2: Efecto de scroll revelador de imágenes terroríficas**
-Dado que el usuario hace scroll hacia abajo  
-Cuando el navbar detecta el movimiento  
+**Escenario 2: Transformación al Interactuar**
+Dado que el usuario realiza cualquier acción (scroll hacia abajo o mueve el mouse)  
+Cuando se detecta la primera interacción  
 Entonces:
-- Se revela progresivamente una imagen antigua aterradora (del estilo de las fotos antiguas de creepypasta: niños victorianos siniestros, retratos perturbadores, imágenes antiguas con daño, etc.)
-- La imagen debe aparecer con efecto parallax, fade, o blend mode que se sienta como si estuviera "emergiendo" desde el fondo
-- La imagen cambia o evoluciona sutilmente mientras se sigue scrolleando (efecto cinematográfico)
-- La imagen debe ser grande, de alta calidad y con fuerte impacto visual (blanco y negro o con tonos sepia/oscuros)
+- El componente debe **transformarse inmediatamente** al diseño terrorífico actual (fondo #0A1324, niebla azul, glow #4A9EFF, atmósfera de calabozo)
+- La transición debe ser cinematográfica y fluida (usando GSAP)
+- La foto, el texto y los colores deben cambiar progresivamente
+- Una vez transformado, debe quedarse en el estado terrorífico durante toda la sesión
 
-**Escenario 3: Comportamiento en móvil**
-Dado que el usuario está en dispositivo móvil  
-Cuando se carga el navbar  
-Entonces:
-- Se activa una media query que transforma el nav en versión móvil
-- Aparece un botón de hamburguesa grande y terrorífico
-- Al hacer clic se abre un menú lateral o fullscreen con animaciones siniestras
-- Los enlaces del menú también deben tener efectos hover perturbadores
-- La imagen reveladora por scroll debe seguir funcionando correctamente en móvil
+**Escenario 3: Comportamiento Técnico**
+- La transformación debe activarse con el **primer movimiento** del mouse o el primer scroll
+- Solo debe ocurrir **una sola vez** por visita (usar sessionStorage)
+- La transición debe ser suave pero impactante (glitch sutil, color shift, inner glow azul, revelado de niebla, etc.)
+- Mantener todas las animaciones GSAP del diseño terrorífico actual
 
-**Escenario 4: Efectos muy geniales durante el scroll**
-La interacción con el scroll debe incluir efectos cinematográficos y premium:
-- Parallax avanzado en la imagen de fondo
-- Efectos de grain, distorsión sutil o vignette al scrollear
-- Transiciones suaves entre estados del navbar (expandido / contraído)
-- Glows, sombras volumétricas y cambios de opacidad en los enlaces
-- Animación fluida a 60fps sin lag
-
-**Escenario 5: Rendimiento y accesibilidad**
-- Todo el navbar debe ser fluido y de alto rendimiento (GPU accelerated)
-- Mantener buena accesibilidad (aria-labels, keyboard navigation, focus states)
-- La imagen reveladora debe tener `aria-hidden="true"` ya que es decorativa
-- Responsive perfecto en todos los tamaños de pantalla
+**Escenario 4: Responsive**
+- El estado formal debe verse excelente en móvil y desktop
+- La transición debe funcionar correctamente en todos los dispositivos
 
 **Notas**
-- La imagen principal debe ser de estilo "fotos antiguas aterradoras" (estilo creepypasta, victorianas perturbadoras, retratos siniestros, etc.)
-- Se puede usar Framer Motion, GSAP o CSS Scroll-Driven Animations para los efectos
-- El navbar debe sentirse premium, oscuro y coherente con el estilo bizarro/terrorífico del portafolio
-- La imagen reveladora debe ser impactante pero no distraer demasiado de la navegación
+- Este componente reemplazará o envolverá al Hero actual.
+- Usa la misma foto que ya tienes en assets (`man_in_dungeon_portrait.png`), aplicando diferentes filtros y estilos según el estado.
+- El estado formal debe sentirse como un portafolio tradicional de desarrollador serio.
+- El estado terrorífico debe ser exactamente el que ya tenemos (calabozo, niebla azul, glow, etc.).
+- Puedes crear un componente llamado `HeroTransform.vue` o `InitialHero.vue`.
 
 **Tareas**
-TK-025-01 Crear el componente SuperMegaNav.vue con estructura base  
-TK-025-02 Implementar el efecto de scroll revelador de imagen terrorífica antigua  
-TK-025-03 Añadir media queries y menú hamburguesa completo para móvil  
-TK-025-04 Crear efectos cinematográficos avanzados durante el scroll (parallax, blend, grain, etc.)  
-TK-025-05 Diseñar el navbar con estilo oscuro y premium  
-TK-025-06 Optimizar rendimiento y fluidez en desktop y móvil  
-TK-025-07 Integrar el Super Mega Nav en App.vue  
-TK-025-08 Commit: “US-025: Super Mega Nav con scroll revelador de imágenes terroríficas implementado”
+
+**Pendiente**
+* TK-031-01 Crear componente `InitialHero.vue` con estado formal (fondo blanco hueso)
+* TK-031-02 Implementar detección de primera interacción (mousemove + scroll)
+* TK-031-03 Crear timeline de transformación con GSAP (de formal → terrorífico)
+* TK-031-04 Añadir efectos cinematográficos durante la transición (color shift, glow, niebla, glitch sutil)
+* TK-031-05 Asegurar que la transformación ocurra solo una vez por sesión
+* TK-031-06 Hacer el componente totalmente responsive
+* TK-031-07 Integrar el nuevo componente en `App.vue` reemplazando el Hero actual
+* TK-031-08 Optimizar rendimiento y limpiar código
+
+**Haciendo**
+(ninguna)
+
+**Hecho**
+(marcar al completar)
 
 **Prioridad**  
-Muy Alta – Es el primer elemento que ve el usuario y define la experiencia completa del portafolio
+Muy Alta
 
-**Dependencias**  
-- Componente Hero.vue (para probar el scroll)  
-- Estilo general oscuro del portafolio
+**Dependencias**
+- Archivo de estilos global (`src/style.css` o `main.css`)
+- GSAP ya instalado
+- Imagen de portada en `src/assets/images/man_in_dungeon_portrait.png`
+- Paleta actual de colores terroríficos (#0A1324, #1B3A5F, #4A9EFF, #B8C8E0)
+
+**Instrucciones para OpenCode / IA:**
+Usa el archivo de estilos global para mantener consistencia. Implementa todo con Vue 3 Composition API + GSAP. Quiero una transición cinematográfica fuerte pero elegante. El estado inicial debe ser serio y profesional, y la transformación debe revelar el verdadero estilo terrorífico del portafolio.
