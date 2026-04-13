@@ -307,13 +307,7 @@ onBeforeUnmount(() => {
   background:
     radial-gradient(circle at 50% 14%, rgba(242, 242, 242, 0.14), transparent 18%),
     radial-gradient(circle at 20% 82%, rgba(208, 208, 208, 0.08), transparent 30%),
-    linear-gradient(180deg, rgba(12, 12, 12, 0.64), rgba(2, 2, 2, 0.96)),
-    repeating-linear-gradient(
-      90deg,
-      rgba(6, 6, 6, 0.95) 0 4%,
-      rgba(12, 12, 12, 0.92) 4% 8%,
-      rgba(8, 8, 8, 0.96) 8% 12%
-    );
+    linear-gradient(180deg, rgba(12, 12, 12, 0.64), rgba(2, 2, 2, 0.96));
 }
 
 .contact-vignette {
@@ -380,12 +374,7 @@ onBeforeUnmount(() => {
   position: absolute;
   width: 2px;
   height: 100%;
-  background:
-    repeating-linear-gradient(
-      180deg,
-      rgba(228, 228, 228, 0.72) 0 8px,
-      rgba(18, 18, 18, 0.95) 8px 16px
-    );
+  background: linear-gradient(180deg, rgba(228, 228, 228, 0.72), rgba(18, 18, 18, 0.95));
   box-shadow: 0 0 16px rgba(255, 255, 255, 0.14);
   animation: chainSway 5.8s infinite ease-in-out;
 }
@@ -486,13 +475,7 @@ onBeforeUnmount(() => {
 
 .contact-grain {
   background:
-    repeating-radial-gradient(circle at 24% 62%, rgba(240, 240, 240, 0.14) 0 1px, transparent 1px 3px),
-    repeating-linear-gradient(
-      75deg,
-      rgba(215, 215, 215, 0.08) 0 2px,
-      transparent 2px 6px,
-      rgba(30, 30, 30, 0.11) 6px 9px
-    );
+    repeating-radial-gradient(circle at 24% 62%, rgba(240, 240, 240, 0.14) 0 1px, transparent 1px 3px);
   mix-blend-mode: soft-light;
   opacity: 0.26;
   animation: grainJitter 0.84s infinite steps(6, end);

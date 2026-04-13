@@ -431,7 +431,7 @@ onBeforeUnmount(() => {
   filter: grayscale(1) contrast(1.16);
 }
 
-.hero-backdrop,
+
 .hero-vignette,
 .hero-grain,
 .hero-flicker {
@@ -439,18 +439,7 @@ onBeforeUnmount(() => {
   inset: 0;
 }
 
-.hero-backdrop {
-  background:
-    radial-gradient(circle at 50% 16%, rgba(242, 242, 242, 0.16), transparent 21%),
-    radial-gradient(circle at 84% 74%, rgba(220, 220, 220, 0.08), transparent 30%),
-    linear-gradient(180deg, rgba(16, 16, 16, 0.64), rgba(1, 1, 1, 0.98)),
-    repeating-linear-gradient(
-      90deg,
-      rgba(4, 4, 4, 0.92) 0 4%,
-      rgba(12, 12, 12, 0.9) 4% 8%,
-      rgba(8, 8, 8, 0.94) 8% 12%
-    );
-}
+
 
 .hero-vignette {
   background:
@@ -518,8 +507,7 @@ onBeforeUnmount(() => {
   width: clamp(4.8rem, 8vw, 8.5rem);
   border-radius: 9px 9px 0 0;
   background:
-    linear-gradient(180deg, rgba(192, 192, 192, 0.2), rgba(20, 20, 20, 0.95) 45%),
-    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0 4px, transparent 4px 11px);
+    linear-gradient(180deg, rgba(192, 192, 192, 0.2), rgba(20, 20, 20, 0.95) 45%);
   box-shadow: 0 -12px 36px rgba(255, 255, 255, 0.08), 0 24px 44px rgba(0, 0, 0, 0.65);
 }
 
@@ -845,13 +833,7 @@ onBeforeUnmount(() => {
 
 .hero-grain {
   background:
-    repeating-radial-gradient(circle at 26% 64%, rgba(240, 240, 240, 0.14) 0 1px, transparent 1px 3px),
-    repeating-linear-gradient(
-      72deg,
-      rgba(210, 210, 210, 0.08) 0 2px,
-      transparent 2px 6px,
-      rgba(30, 30, 30, 0.1) 6px 9px
-    );
+    repeating-radial-gradient(circle at 26% 64%, rgba(240, 240, 240, 0.14) 0 1px, transparent 1px 3px);
   mix-blend-mode: soft-light;
   opacity: 0.26;
   animation: grainShift 0.82s infinite steps(6, end);

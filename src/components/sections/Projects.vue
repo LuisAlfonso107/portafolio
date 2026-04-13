@@ -318,13 +318,7 @@ onBeforeUnmount(() => {
   background:
     radial-gradient(circle at 50% 12%, rgba(244, 244, 244, 0.14), transparent 18%),
     radial-gradient(circle at 14% 84%, rgba(210, 210, 210, 0.09), transparent 28%),
-    linear-gradient(180deg, rgba(12, 12, 12, 0.62), rgba(2, 2, 2, 0.98)),
-    repeating-linear-gradient(
-      90deg,
-      rgba(8, 8, 8, 0.94) 0 4%,
-      rgba(14, 14, 14, 0.92) 4% 8%,
-      rgba(10, 10, 10, 0.96) 8% 12%
-    );
+    linear-gradient(180deg, rgba(12, 12, 12, 0.62), rgba(2, 2, 2, 0.98));
 }
 
 .void-vignette {
@@ -390,8 +384,7 @@ onBeforeUnmount(() => {
   width: clamp(3rem, 7vw, 6rem);
   border-radius: 12px 12px 0 0;
   background:
-    linear-gradient(180deg, rgba(230, 230, 230, 0.2), rgba(20, 20, 20, 0.96) 52%),
-    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0 4px, transparent 4px 11px);
+    linear-gradient(180deg, rgba(230, 230, 230, 0.2), rgba(20, 20, 20, 0.96) 52%);
   box-shadow: inset 0 -16px 24px rgba(0, 0, 0, 0.54), 0 16px 30px rgba(0, 0, 0, 0.62);
 }
 
@@ -452,13 +445,7 @@ onBeforeUnmount(() => {
 
 .void-noise {
   background:
-    repeating-radial-gradient(circle at 22% 64%, rgba(240, 240, 240, 0.14) 0 1px, transparent 1px 3px),
-    repeating-linear-gradient(
-      74deg,
-      rgba(212, 212, 212, 0.08) 0 2px,
-      transparent 2px 6px,
-      rgba(30, 30, 30, 0.12) 6px 9px
-    );
+    repeating-radial-gradient(circle at 22% 64%, rgba(240, 240, 240, 0.14) 0 1px, transparent 1px 3px);
   mix-blend-mode: soft-light;
   opacity: 0.22;
 }
@@ -558,11 +545,7 @@ onBeforeUnmount(() => {
 
 .ritual-visual::after {
   background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.05) 0 4%,
-      rgba(0, 0, 0, 0.08) 4% 8%
-    );
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.08));
   opacity: 0.6;
   mix-blend-mode: soft-light;
 }
@@ -594,9 +577,6 @@ onBeforeUnmount(() => {
   inset: 14% 10%;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 8px;
-  background:
-    linear-gradient(90deg, transparent 0 18%, rgba(255, 255, 255, 0.12) 18% 19%, transparent 19% 50%, rgba(255, 255, 255, 0.12) 50% 51%, transparent 51% 82%, rgba(255, 255, 255, 0.12) 82% 83%, transparent 83%),
-    linear-gradient(180deg, transparent 0 25%, rgba(255, 255, 255, 0.12) 25% 26%, transparent 26% 74%, rgba(255, 255, 255, 0.12) 74% 75%, transparent 75%);
 }
 
 .visual-core {

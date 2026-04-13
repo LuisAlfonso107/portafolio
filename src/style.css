@@ -48,14 +48,7 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(transparent 0%, rgba(184, 200, 224, 0.03) 100%),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent 120px,
-      rgba(74, 158, 255, 0.03) 121px,
-      rgba(74, 158, 255, 0.03) 122px
-    );
+    linear-gradient(transparent 0%, rgba(184, 200, 224, 0.03) 100%);
   opacity: 0.4;
 }
 
@@ -192,13 +185,7 @@ textarea {
     radial-gradient(circle at 50% 15%, rgba(74, 158, 255, 0.18), transparent 28%),
     linear-gradient(180deg, rgba(6, 12, 24, 0.2) 0%, rgba(5, 11, 19, 0.96) 100%),
     radial-gradient(circle at 50% 90%, rgba(17, 28, 45, 0.95), rgba(5, 11, 19, 1) 45%),
-    linear-gradient(180deg, rgba(3, 7, 14, 0.75), rgba(6, 12, 24, 0.2)),
-    repeating-linear-gradient(
-      90deg,
-      rgba(7, 16, 29, 0.85) 0 5%,
-      rgba(11, 21, 37, 0.96) 5% 8%,
-      rgba(6, 12, 24, 0.9) 8% 13%
-    );
+    linear-gradient(180deg, rgba(3, 7, 14, 0.75), rgba(6, 12, 24, 0.2));
   filter: saturate(0.7) contrast(1.05);
 }
 
@@ -712,11 +699,6 @@ textarea {
 
 .horror-grain {
   background:
-    repeating-linear-gradient(
-      70deg,
-      rgba(95, 16, 20, 0.08) 0 3px,
-      rgba(0, 0, 0, 0) 3px 7px
-    ),
     repeating-radial-gradient(
       circle at 30% 60%,
       rgba(180, 32, 36, 0.07) 0 2px,
@@ -950,7 +932,6 @@ textarea {
   inset: auto 10% 10% 10%;
   height: 32%;
   background:
-    linear-gradient(90deg, transparent 0 8%, rgba(184, 200, 224, 0.18) 8% 9%, transparent 9% 17%, rgba(184, 200, 224, 0.18) 17% 18%, transparent 18% 82%, rgba(184, 200, 224, 0.18) 82% 83%, transparent 83% 91%, rgba(184, 200, 224, 0.18) 91% 92%, transparent 92%),
     linear-gradient(180deg, rgba(184, 200, 224, 0.12), rgba(184, 200, 224, 0.06));
   border: 1px solid rgba(184, 200, 224, 0.18);
 }
@@ -981,8 +962,7 @@ textarea {
 .project-art-symphony::after {
   inset: 18% 48.5% 18% 48.5%;
   background:
-    linear-gradient(180deg, rgba(237, 245, 255, 0.88), rgba(184, 200, 224, 0.4)),
-    linear-gradient(90deg, transparent 0, rgba(74, 158, 255, 0.18) 50%, transparent 100%);
+    linear-gradient(180deg, rgba(237, 245, 255, 0.88), rgba(184, 200, 224, 0.4));
 }
 
 @keyframes drift {
@@ -1102,9 +1082,7 @@ textarea {
 .zone-blue::before {
   background:
     radial-gradient(circle at 18% 16%, rgba(0, 0, 0, 0.38), transparent 34%),
-    radial-gradient(circle at 78% 72%, rgba(0, 0, 0, 0.32), transparent 38%),
-    repeating-linear-gradient(122deg, rgba(0, 0, 0, 0.18) 0 8px, transparent 8px 18px),
-    repeating-linear-gradient(38deg, rgba(0, 0, 0, 0.12) 0 6px, transparent 6px 13px);
+    radial-gradient(circle at 78% 72%, rgba(0, 0, 0, 0.32), transparent 38%);
   opacity: 0.36;
   mix-blend-mode: multiply;
   animation: devourSweep 11.8s infinite alternate ease-in-out;
@@ -1114,7 +1092,6 @@ textarea {
   background:
     radial-gradient(circle at 24% 22%, rgba(74, 158, 255, 0.2), transparent 35%),
     radial-gradient(circle at 84% 68%, rgba(74, 158, 255, 0.16), transparent 36%),
-    repeating-linear-gradient(94deg, rgba(74, 158, 255, 0.1) 0 7px, transparent 7px 16px),
     linear-gradient(180deg, rgba(18, 42, 74, 0.14), transparent 44%);
   opacity: 0.3;
   mix-blend-mode: screen;
@@ -1161,9 +1138,6 @@ textarea {
 }
 
 .fusion-branches::before {
-  background:
-    repeating-linear-gradient(132deg, rgba(255, 255, 255, 0.08) 0 2px, transparent 2px 14px),
-    repeating-linear-gradient(44deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 10px);
   mask-image: linear-gradient(180deg, transparent 0 14%, rgba(0, 0, 0, 0.9) 28% 82%, transparent 100%);
 }
 
@@ -1183,9 +1157,6 @@ textarea {
 }
 
 .zone-black .fusion-branches::before {
-  background:
-    repeating-linear-gradient(132deg, rgba(74, 158, 255, 0.24) 0 2px, transparent 2px 15px),
-    repeating-linear-gradient(44deg, rgba(74, 158, 255, 0.14) 0 1px, transparent 1px 11px);
 }
 
 .zone-blue .fusion-rift {
@@ -1224,9 +1195,6 @@ textarea {
 }
 
 .fusion-rift::before {
-  background:
-    repeating-linear-gradient(137deg, rgba(255, 255, 255, 0.14) 0 1px, transparent 1px 13px),
-    repeating-linear-gradient(52deg, rgba(255, 255, 255, 0.09) 0 1px, transparent 1px 11px);
   opacity: 0.5;
   animation: veinTwist 10s infinite linear;
 }
