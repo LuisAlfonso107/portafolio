@@ -24,63 +24,62 @@ const links = [
 </script>
 
 <template>
-  <div class="fixed inset-0 z-50 bg-[#F8F4ED] overflow-hidden flex items-center justify-center font-sans text-gray-900 transition-opacity duration-1000 w-full p-4 md:p-8">
-    
-    <!-- Decorative background blobs for Glassmorphism contrast -->
-    <div class="absolute top-[-10%] left-[-10%] w-[30rem] h-[30rem] bg-indigo-100/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-    <div class="absolute top-[20%] right-[-5%] w-[25rem] h-[25rem] bg-stone-200/50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-    <div class="absolute bottom-[-10%] left-[20%] w-[28rem] h-[28rem] bg-slate-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+  <div class="fixed inset-0 z-50 bg-[#F8F4ED] overflow-hidden flex items-center justify-center font-sans text-gray-900 transition-opacity duration-1000 w-full p-4 sm:p-6 md:p-8 lg:p-10">
 
-    <div class="relative z-10 max-w-4xl w-full mx-auto p-8 md:p-12 bg-white/40 backdrop-blur-2xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex flex-col md:flex-row items-center gap-12 border border-white/60">
-      
-      <div class="w-48 h-48 md:w-64 md:h-64 rounded-2xl md:rounded-full overflow-hidden shrink-0 shadow-[0_10px_40px_rgb(0,0,0,0.1)] border-4 border-white/80 bg-white/50 backdrop-blur-sm flex items-center justify-center transform transition-transform duration-700 hover:scale-105">
-        <!-- Utilizamos un fallback por si la imagen no se carga y una clase para imagen limpia -->
-        <img 
-          :src="profilePic" 
-          alt="Luis Alfonso Garcia" 
-          class="w-full h-full object-cover filter contrast-105 brightness-105" 
-          onerror="this.src='https://via.placeholder.com/400?text=Luis+Alfonso'"
-        />
-      </div>
+      <!-- Decorative background blobs for Glassmorphism contrast -->
+      <div class="absolute top-[-15%] left-[-20%] w-[20rem] h-[20rem] sm:w-[25rem] sm:h-[25rem] md:w-[30rem] md:h-[30rem] bg-indigo-100/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+      <div class="absolute top-[15%] right-[-10%] sm:top-[20%] sm:right-[-5%] w-[18rem] h-[18rem] sm:w-[22rem] sm:h-[22rem] md:w-[25rem] md:h-[25rem] bg-stone-200/50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-[-15%] left-[10%] sm:left-[20%] w-[20rem] h-[20rem] sm:w-[25rem] sm:h-[25rem] md:w-[28rem] md:h-[28rem] bg-slate-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
 
-      <div class="flex-1 text-center md:text-left space-y-6">
-        <div class="space-y-2">
-          <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">Luis Alfonso García</h1>
-          <h2 class="text-lg md:text-xl font-medium text-gray-500 tracking-wide uppercase">Desarrollador de Software Full Stack</h2>
+      <div class="relative z-10 max-w-5xl w-full mx-auto p-5 sm:p-6 md:p-10 lg:p-12 bg-white/40 backdrop-blur-2xl rounded-2xl sm:rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-10 lg:gap-14 border border-white/60">
+
+        <!-- Profile Image - responsive sizing -->
+        <div class="w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-2xl md:rounded-3xl lg:rounded-full overflow-hidden shrink-0 shadow-[0_10px_40px_rgb(0,0,0,0.1)] border-4 border-white/80 bg-white/50 backdrop-blur-sm flex items-center justify-center transform transition-transform duration-700 hover:scale-105">
+          <!-- Utilizamos un fallback por si la imagen no se carga y una clase para imagen limpia -->
+          <img 
+            :src="profilePic" 
+            alt="Luis Alfonso Garcia" 
+            class="w-full h-full object-cover filter contrast-105 brightness-105" 
+            onerror="this.src='https://via.placeholder.com/400?text=Luis+Alfonso'"
+          />
         </div>
-
-        <p class="text-lg text-gray-600 leading-relaxed max-w-2xl font-light">
-          Soy un desarrollador altamente motivado con experiencia en la creación de aplicaciones web escalables, intuitivas y eficientes. 
-          Me especializo en diseñar soluciones tecnológicas robustas que conectan rendimiento y estética para ofrecer la mejor experiencia de usuario.
-        </p>
-
-        <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
-          <a v-for="link in links" :key="link.label" :href="link.url" target="_blank" rel="noopener noreferrer" 
-             class="group flex items-center gap-2 px-6 py-3 rounded-2xl bg-white/50 hover:bg-white/80 backdrop-blur-md text-gray-700 hover:text-gray-950 font-medium transition-all duration-300 border border-white/60 hover:shadow-lg hover:-translate-y-1">
-            <svg class="w-5 h-5 fill-current opacity-80 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path :d="link.icon" />
-            </svg>
-            {{ link.label }}
-          </a>
-        </div>
-
-        <div class="pt-8 border-t border-gray-900/5 mt-4">
-          <button @click="emit('continue')" 
-                  class="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-gray-900 transition-all duration-500 bg-white/70 backdrop-blur-xl rounded-2xl border border-white/80 hover:bg-white focus:outline-none hover:shadow-[0_15px_30px_rgba(0,0,0,0.1)] focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 overflow-hidden hover:scale-[1.02]">
-            <span class="relative z-10 flex items-center gap-3">
-              Descubre mas sobre mi
-              <div class="relative w-7 h-7 flex items-center justify-center overflow-hidden border-2 border-gray-800 rounded-sm bg-white/50 transition-all duration-500 group-hover:border-transparent group-hover:bg-transparent">
-                <!-- Ventana que se abre (puertas) -->
-                <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-800 transition-transform duration-500 origin-left group-hover:-rotate-y-90 group-hover:opacity-0"></div>
-                <div class="absolute inset-y-0 right-0 w-1/2 bg-gray-800 transition-transform duration-500 origin-right group-hover:rotate-y-90 group-hover:opacity-0"></div>
-                <!-- Flecha que aparece y avanza -->
-                <svg class="w-5 h-5 absolute transform translate-x-[-150%] opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+<div class="flex-1 text-center lg:text-left space-y-4 sm:space-y-5 md:space-y-6">
+              <div class="space-y-1 sm:space-y-2">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900">Luis Alfonso García</h1>
+                <h2 class="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-gray-500 tracking-wide uppercase">Desarrollador de Software Full Stack</h2>
               </div>
-            </span>
-          </button>
-        </div>
+
+              <p class="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl font-light">
+                Soy un desarrollador altamente motivado con experiencia en la creación de aplicaciones web escalables, intuitivas y eficientes. 
+                Me especializo en diseñar soluciones tecnológicas robustas que conectan rendimiento y estética para ofrecer la mejor experiencia de usuario.
+              </p>
+
+              <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-3 md:pt-4">
+                <a v-for="link in links" :key="link.label" :href="link.url" target="_blank" rel="noopener noreferrer" 
+                    class="group flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 md:py-3 rounded-xl sm:rounded-2xl bg-white/50 hover:bg-white/80 backdrop-blur-md text-gray-700 hover:text-gray-950 font-medium transition-all duration-300 border border-white/60 hover:shadow-lg hover:-translate-y-1 text-xs sm:text-sm md:text-base">
+                  <svg class="w-4 h-4 sm:w-5 h-5 fill-current opacity-80 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path :d="link.icon" />
+                  </svg>
+                  {{ link.label }}
+                </a>
+              </div>
+<div class="pt-6 sm:pt-7 md:pt-8 border-t border-gray-900/5 mt-3 sm:mt-4">
+                  <button @click="emit('continue')" 
+                          class="group relative inline-flex items-center justify-center px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-gray-900 transition-all duration-500 bg-white/70 backdrop-blur-xl rounded-xl sm:rounded-2xl border border-white/80 hover:bg-white focus:outline-none hover:shadow-[0_15px_30px_rgba(0,0,0,0.1)] focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 overflow-hidden hover:scale-[1.02]">
+                    <span class="relative z-10 flex items-center gap-2 sm:gap-2.5 md:gap-3">
+                      Descubre mas sobre mi
+                      <div class="relative w-6 h-6 sm:w-7 h-7 flex items-center justify-center overflow-hidden border-2 border-gray-800 rounded-sm bg-white/50 transition-all duration-500 group-hover:border-transparent group-hover:bg-transparent">
+                        <!-- Ventana que se abre (puertas) -->
+                        <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-800 transition-transform duration-500 origin-left group-hover:-rotate-y-90 group-hover:opacity-0"></div>
+                        <div class="absolute inset-y-0 right-0 w-1/2 bg-gray-800 transition-transform duration-500 origin-right group-hover:rotate-y-90 group-hover:opacity-0"></div>
+                        <!-- Flecha que aparece y avanza -->
+                        <svg class="w-4 h-4 sm:w-5 h-5 absolute transform translate-x-[-150%] opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </div>
+                    </span>
+                  </button>
+                </div>
       </div>
     </div>
   </div>
@@ -91,6 +90,7 @@ div {
   box-sizing: border-box;
 }
 
+/* Animaciones de fondo */
 @keyframes blob {
   0% { transform: translate(0px, 0px) scale(1); }
   33% { transform: translate(30px, -50px) scale(1.1); }
@@ -106,10 +106,241 @@ div {
 .animation-delay-4000 {
   animation-delay: 4s;
 }
+
+/* Transiciones 3D para el botón */
 .rotate-y-90 {
   transform: rotateY(90deg);
 }
 .-rotate-y-90 {
   transform: rotateY(-90deg);
+}
+
+/* ============ MEDIA QUERIES ============ */
+
+/* Pantallas pequeñas (móviles pequeños, < 480px) */
+@media screen and (max-width: 480px) {
+  .fixed.inset-0.z-50 {
+    padding: 1rem !important;
+    align-items: flex-start !important;
+    padding-top: 2rem !important;
+  }
+
+  .bg-white\/40.backdrop-blur-2xl {
+    padding: 1.5rem !important;
+    border-radius: 1.5rem !important;
+    gap: 1.5rem !important;
+  }
+
+  .w-48.h-48 {
+    width: 6rem !important;
+    height: 6rem !important;
+  }
+
+  h1.text-4xl {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2.text-lg {
+    font-size: 0.875rem !important;
+  }
+
+  p.text-lg {
+    font-size: 0.9375rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .flex.flex-wrap.items-center.gap-4 {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .group.flex.items-center.gap-2 {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  .group.relative.inline-flex.items-center.justify-center.px-8.py-4 {
+    width: 100%;
+  }
+
+  .absolute.top-\[-10\%\] {
+    width: 15rem !important;
+    height: 15rem !important;
+  }
+
+  .absolute.top-\[20\%\].right-\[-5\%\] {
+    width: 12rem !important;
+    height: 12rem !important;
+  }
+
+  .absolute.bottom-\[-10\%\].left-\[20\%\] {
+    width: 14rem !important;
+    height: 14rem !important;
+  }
+}
+
+/* Pantallas medianas (tablets, 481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .fixed.inset-0.z-50 {
+    padding: 1.5rem !important;
+  }
+
+  .bg-white\/40.backdrop-blur-2xl {
+    padding: 2rem !important;
+    gap: 2rem !important;
+  }
+
+  .w-48.h-48 {
+    width: 8rem !important;
+    height: 8rem !important;
+  }
+
+  h1.text-4xl {
+    font-size: 2rem !important;
+  }
+
+  p.text-lg {
+    font-size: 1rem !important;
+  }
+
+  .flex.flex-wrap.items-center.gap-4 {
+    justify-content: center;
+  }
+
+  .group.flex.items-center.gap-2 {
+    padding: 0.625rem 1rem !important;
+  }
+}
+
+/* Pantallas grandes (escritorio pequeño, 769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .bg-white\/40.backdrop-blur-2xl {
+    padding: 2.5rem !important;
+    gap: 2.5rem !important;
+  }
+
+  .w-48.h-48.md\:w-64.md\:h-64 {
+    width: 9rem !important;
+    height: 9rem !important;
+  }
+
+  h1.text-4xl.md\:text-5xl {
+    font-size: 2.25rem !important;
+  }
+}
+
+/* Pantallas extragrandes (> 1024px) */
+@media screen and (min-width: 1025px) {
+  .bg-white\/40.backdrop-blur-2xl {
+    max-width: 55rem !important;
+  }
+
+  h1.text-4xl.md\:text-5xl {
+    font-size: 3rem !important;
+  }
+}
+
+/* Mejoras de rendimiento y accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob,
+  .animation-delay-2000,
+  .animation-delay-4000 {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .group,
+  .group.flex,
+  .group.relative {
+    transition: none !important;
+  }
+
+  .transform,
+  .group-hover\:scale-105,
+  .hover\:scale-\[1\.02\] {
+    transform: none !important;
+  }
+}
+
+/* Tema oscuro (soporte opcional) */
+@media (prefers-color-scheme: dark) {
+  .fixed.inset-0.z-50.bg-\[\#F8F4ED\] {
+    background: linear-gradient(135deg, #9b9b9e 0%, #eaeaea 50%, #abafb5 100%) !important;
+  }
+}
+
+/* Orientación landscape en móviles */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .fixed.inset-0.z-50 {
+    align-items: center !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .bg-white\/40.backdrop-blur-2xl {
+    flex-direction: row !important;
+    padding: 1rem !important;
+    gap: 1rem !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+  }
+
+  .w-48.h-48 {
+    width: 5rem !important;
+    height: 5rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  h1.text-4xl {
+    font-size: 1.5rem !important;
+  }
+
+  h2.text-lg {
+    font-size: 0.75rem !important;
+  }
+
+  p.text-lg {
+    font-size: 0.8125rem !important;
+    max-height: 4rem !important;
+    overflow: hidden !important;
+  }
+
+  .pt-8 {
+    padding-top: 0.5rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .absolute {
+    display: none !important;
+  }
+}
+
+/* Impresión */
+@media print {
+  .fixed.inset-0.z-50 {
+    position: relative !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    background: white !important;
+  }
+
+  .absolute {
+    display: none !important;
+  }
+
+  .bg-white\/40.backdrop-blur-2xl {
+    background: white !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+
+  .group.flex,
+  .group.relative {
+    display: none !important;
+  }
 }
 </style>
