@@ -101,7 +101,8 @@ const continueToHorrorTheme = () => {
         <About
           name="Luis Alfonso Garcia "
           role="Full-Stack "
-          bio="Soy Luis Alfonso Garcia Lagos, desarrollador Full-Stack. Me especializo en crear experiencia por su calidad y la capacidad de adaptarme a nuevas tecnologias: Vue, React, Tailwind, Node.js y mas. Actualmente invoco interfaces desde el abismo."
+          bio="Soy Alfonso García, desarrollador Full-Stack con una fuerte pasión por construir aplicaciones web de calidad. Me especializo en crear soluciones completas que combinan una excelente experiencia de usuario con un código limpio y eficiente.
+Me adapto rápidamente a nuevas tecnologías y siempre busco ganar conocimiento en cada proyecto. Además, cuento con buenas habilidades de comunicación y trabajo en equipo, lo que me permite colaborar de manera efectiva con otros profesionales, integrar ideas y entregar resultados exitosos en entornos multidisciplinarios."
           :links="aboutLinks"
           :image-url="aboutPortrait"
         />
