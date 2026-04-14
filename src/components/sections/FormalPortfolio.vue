@@ -2,7 +2,7 @@
 const emit = defineEmits(['continue'])
 
 // Usamos new URL para evitar que Vite rompa el build si la imagen aún no existe.
-const profilePic = new URL('../../assets/IMG20220207183712.jpg', import.meta.url).href
+const profilePic = new URL('../../assets/image.png', import.meta.url).href
 
 const links = [
   { 
