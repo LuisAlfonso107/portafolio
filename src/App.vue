@@ -51,11 +51,14 @@ const projects = [
 
 const skills = [
   { name: 'Vue 3', icon: 'V3' },
-  { name: 'React', icon: 'Re' },
   { name: 'Tailwind CSS', icon: 'TW' },
-  { name: 'Node.js', icon: 'Nd' },
+  { name: 'Python', icon: 'PY' },
   { name: 'JavaScript', icon: 'JS' },
-  { name: 'Vite', icon: 'Vi' },
+  { name: 'Flask', icon: 'FL' },
+  { name: 'Vite', icon: 'VI' },
+  { name: 'SQLite', icon: 'SQ' },
+  { name: 'GitHub', icon: 'GI' },
+  { name: 'Postman', icon: 'PO' },
 ]
 
 const aboutLinks = [

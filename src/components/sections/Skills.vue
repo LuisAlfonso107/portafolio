@@ -12,7 +12,7 @@ defineProps({
     <div class="container">
       <div class="section-heading">
         <h2>Stack</h2>
-        <p>Vue, React, Python, Node.js, javascript, HTML, CSS, Git, GitHub, etc.</p>
+        <p>Vue, Python, Flask, JavaScript, HTML, CSS, Postman, SQLite, Git, GitHub, etc.</p>
       </div>
       <div class="skills-grid">
         <article v-for="item in items" :key="item.name" class="skill-card">
